@@ -1,0 +1,12 @@
+{
+	"extends": "@tsconfig/node18/tsconfig.json",
+	"compilerOptions": {
+		"importHelpers": true,
+		"noEmit": true,
+		"emitDeclarationOnly": false,
+		"allowJs": true,
+		"allowImportingTsExtensions": true
+	},
+	"include": ["scripts/**/*"],
+	"references": [{ "path": "tsconfig.build.json" }]
+}

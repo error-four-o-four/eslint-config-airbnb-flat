@@ -4,49 +4,42 @@
 			"name": "array-bracket-newline",
 			"value": ["off", "consistent"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/array-bracket-newline"
 		},
 		{
 			"name": "array-bracket-spacing",
 			"value": ["error", "never"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/array-bracket-spacing"
 		},
 		{
 			"name": "array-element-newline",
 			"value": ["off", { "multiline": true, "minItems": 3 }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/array-element-newline"
 		},
 		{
 			"name": "arrow-parens",
 			"value": ["error", "always"],
 			"config": "es6",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/arrow-parens"
 		},
 		{
 			"name": "arrow-spacing",
 			"value": ["error", { "before": true, "after": true }],
 			"config": "es6",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/arrow-spacing"
 		},
 		{
 			"name": "block-spacing",
 			"value": ["error", "always"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/block-spacing"
 		},
 		{
 			"name": "brace-style",
 			"value": ["error", "1tbs", { "allowSingleLine": true }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/brace-style"
 		},
 		{
@@ -62,14 +55,12 @@
 				}
 			],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/comma-dangle"
 		},
 		{
 			"name": "comma-spacing",
 			"value": ["error", { "before": false, "after": true }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/comma-spacing"
 		},
 		{
@@ -94,63 +85,54 @@
 				}
 			],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/comma-style"
 		},
 		{
 			"name": "computed-property-spacing",
 			"value": ["error", "never"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/computed-property-spacing"
 		},
 		{
 			"name": "dot-location",
 			"value": ["error", "property"],
 			"config": "best-practices",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/dot-location"
 		},
 		{
 			"name": "eol-last",
 			"value": ["error", "always"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/eol-last"
 		},
 		{
 			"name": "func-call-spacing",
 			"value": ["error", "never"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/func-call-spacing"
 		},
 		{
 			"name": "function-call-argument-newline",
 			"value": ["error", "consistent"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/function-call-argument-newline"
 		},
 		{
 			"name": "function-paren-newline",
 			"value": ["error", "multiline-arguments"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/function-paren-newline"
 		},
 		{
 			"name": "generator-star-spacing",
 			"value": ["error", { "before": false, "after": true }],
 			"config": "es6",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/generator-star-spacing"
 		},
 		{
 			"name": "implicit-arrow-linebreak",
 			"value": ["error", "beside"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/implicit-arrow-linebreak"
 		},
 		{
@@ -191,21 +173,18 @@
 				}
 			],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/indent"
 		},
 		{
 			"name": "jsx-quotes",
 			"value": ["off", "prefer-double"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/jsx-quotes"
 		},
 		{
 			"name": "key-spacing",
 			"value": ["error", { "beforeColon": false, "afterColon": true }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/key-spacing"
 		},
 		{
@@ -223,28 +202,24 @@
 				}
 			],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/keyword-spacing"
 		},
 		{
 			"name": "linebreak-style",
 			"value": ["error", "unix"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/linebreak-style"
 		},
 		{
 			"name": "lines-around-comment",
 			"value": "off",
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/lines-around-comment"
 		},
 		{
 			"name": "lines-between-class-members",
 			"value": ["error", "always", { "exceptAfterSingleLine": false }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/lines-between-class-members"
 		},
 		{
@@ -262,42 +237,36 @@
 				}
 			],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/max-len"
 		},
 		{
 			"name": "max-statements-per-line",
 			"value": ["off", { "max": 1 }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/max-statements-per-line"
 		},
 		{
 			"name": "multiline-ternary",
 			"value": ["off", "never"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/multiline-ternary"
 		},
 		{
 			"name": "new-parens",
 			"value": "error",
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/new-parens"
 		},
 		{
 			"name": "newline-per-chained-call",
 			"value": ["error", { "ignoreChainWithDepth": 4 }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/newline-per-chained-call"
 		},
 		{
 			"name": "no-confusing-arrow",
 			"value": ["error", { "allowParens": true }],
 			"config": "es6",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-confusing-arrow"
 		},
 		{
@@ -314,21 +283,18 @@
 				}
 			],
 			"config": "errors",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-extra-parens"
 		},
 		{
 			"name": "no-extra-semi",
 			"value": "error",
 			"config": "errors",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-extra-semi"
 		},
 		{
 			"name": "no-floating-decimal",
 			"value": "error",
 			"config": "best-practices",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-floating-decimal"
 		},
 		{
@@ -351,56 +317,48 @@
 				}
 			],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-mixed-operators"
 		},
 		{
 			"name": "no-mixed-spaces-and-tabs",
 			"value": "error",
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-mixed-spaces-and-tabs"
 		},
 		{
 			"name": "no-multi-spaces",
 			"value": ["error", { "ignoreEOLComments": false }],
 			"config": "best-practices",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-multi-spaces"
 		},
 		{
 			"name": "no-multiple-empty-lines",
 			"value": ["error", { "max": 1, "maxBOF": 0, "maxEOF": 0 }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-multiple-empty-lines"
 		},
 		{
 			"name": "no-tabs",
 			"value": "error",
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-tabs"
 		},
 		{
 			"name": "no-trailing-spaces",
 			"value": ["error", { "skipBlankLines": false, "ignoreComments": false }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-trailing-spaces"
 		},
 		{
 			"name": "no-whitespace-before-property",
 			"value": "error",
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-whitespace-before-property"
 		},
 		{
 			"name": "nonblock-statement-body-position",
 			"value": ["error", "beside", { "overrides": {} }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/nonblock-statement-body-position"
 		},
 		{
@@ -431,35 +389,30 @@
 				}
 			],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/object-curly-newline"
 		},
 		{
 			"name": "object-curly-spacing",
 			"value": ["error", "always"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/object-curly-spacing"
 		},
 		{
 			"name": "object-property-newline",
 			"value": ["error", { "allowAllPropertiesOnSameLine": true }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/object-property-newline"
 		},
 		{
 			"name": "one-var-declaration-per-line",
 			"value": ["error", "always"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/one-var-declaration-per-line"
 		},
 		{
 			"name": "operator-linebreak",
 			"value": ["error", "before", { "overrides": { "=": "none" } }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/operator-linebreak"
 		},
 		{
@@ -470,14 +423,12 @@
 				{ "allowSingleLineBlocks": true }
 			],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/padded-blocks"
 		},
 		{
 			"name": "padding-line-between-statements",
 			"value": "off",
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/padding-line-between-statements"
 		},
 		{
@@ -488,49 +439,42 @@
 				{ "keywords": false, "unnecessary": true, "numbers": false }
 			],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/quote-props"
 		},
 		{
 			"name": "quotes",
 			"value": ["error", "single", { "avoidEscape": true }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/quotes"
 		},
 		{
 			"name": "rest-spread-spacing",
 			"value": ["error", "never"],
 			"config": "es6",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/rest-spread-spacing"
 		},
 		{
 			"name": "semi",
 			"value": ["error", "always"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/semi"
 		},
 		{
 			"name": "semi-spacing",
 			"value": ["error", { "before": false, "after": true }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/semi-spacing"
 		},
 		{
 			"name": "semi-style",
 			"value": ["error", "last"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/semi-style"
 		},
 		{
 			"name": "space-before-blocks",
 			"value": "error",
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/space-before-blocks"
 		},
 		{
@@ -540,28 +484,24 @@
 				{ "anonymous": "always", "named": "never", "asyncArrow": "always" }
 			],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/space-before-function-paren"
 		},
 		{
 			"name": "space-in-parens",
 			"value": ["error", "never"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/space-in-parens"
 		},
 		{
 			"name": "space-infix-ops",
 			"value": "error",
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/space-infix-ops"
 		},
 		{
 			"name": "space-unary-ops",
 			"value": ["error", { "words": true, "nonwords": false, "overrides": {} }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/space-unary-ops"
 		},
 		{
@@ -579,49 +519,42 @@
 				}
 			],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/spaced-comment"
 		},
 		{
 			"name": "switch-colon-spacing",
 			"value": ["error", { "after": true, "before": false }],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/switch-colon-spacing"
 		},
 		{
 			"name": "template-curly-spacing",
 			"value": "error",
 			"config": "es6",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/template-curly-spacing"
 		},
 		{
 			"name": "template-tag-spacing",
 			"value": ["error", "never"],
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/template-tag-spacing"
 		},
 		{
 			"name": "wrap-iife",
 			"value": ["error", "outside", { "functionPrototypeMethods": false }],
 			"config": "best-practices",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/wrap-iife"
 		},
 		{
 			"name": "wrap-regex",
 			"value": "off",
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/wrap-regex"
 		},
 		{
 			"name": "yield-star-spacing",
 			"value": ["error", "after"],
 			"config": "es6",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/yield-star-spacing"
 		}
 	],
@@ -630,63 +563,54 @@
 			"name": "callback-return",
 			"value": "off",
 			"config": "node",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/callback-return"
 		},
 		{
 			"name": "global-require",
 			"value": "error",
 			"config": "node",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/global-require"
 		},
 		{
 			"name": "handle-callback-err",
 			"value": "off",
 			"config": "node",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/handle-callback-err"
 		},
 		{
 			"name": "no-mixed-requires",
 			"value": ["off", false],
 			"config": "node",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-mixed-requires"
 		},
 		{
 			"name": "no-new-require",
 			"value": "error",
 			"config": "node",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-new-require"
 		},
 		{
 			"name": "no-path-concat",
 			"value": "error",
 			"config": "node",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-path-concat"
 		},
 		{
 			"name": "no-process-env",
 			"value": "off",
 			"config": "node",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-process-env"
 		},
 		{
 			"name": "no-process-exit",
 			"value": "off",
 			"config": "node",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-process-exit"
 		},
 		{
 			"name": "no-sync",
 			"value": "off",
 			"config": "node",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-sync"
 		}
 	],
@@ -703,98 +627,92 @@
 			"name": "lines-around-directive",
 			"value": ["error", { "before": "always", "after": "always" }],
 			"config": "style",
-			"replacedBy": ["padding-line-between-statements"],
+			"replacedBy": "padding-line-between-statements",
 			"url": "https://eslint.org/docs/latest/rules/lines-around-directive"
 		},
 		{
 			"name": "newline-after-var",
 			"value": "off",
 			"config": "style",
-			"replacedBy": ["padding-line-between-statements"],
+			"replacedBy": "padding-line-between-statements",
 			"url": "https://eslint.org/docs/latest/rules/newline-after-var"
 		},
 		{
 			"name": "newline-before-return",
 			"value": "off",
 			"config": "style",
-			"replacedBy": ["padding-line-between-statements"],
+			"replacedBy": "padding-line-between-statements",
 			"url": "https://eslint.org/docs/latest/rules/newline-before-return"
 		},
 		{
 			"name": "no-buffer-constructor",
 			"value": "error",
 			"config": "node",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-buffer-constructor"
 		},
 		{
 			"name": "no-catch-shadow",
 			"value": "off",
 			"config": "variables",
-			"replacedBy": ["no-shadow"],
+			"replacedBy": "no-shadow",
 			"url": "https://eslint.org/docs/latest/rules/no-catch-shadow"
 		},
 		{
 			"name": "no-native-reassign",
 			"value": "off",
 			"config": "best-practices",
-			"replacedBy": ["no-global-assign"],
+			"replacedBy": "no-global-assign",
 			"url": "https://eslint.org/docs/latest/rules/no-native-reassign"
 		},
 		{
 			"name": "no-negated-in-lhs",
 			"value": "off",
 			"config": "errors",
-			"replacedBy": ["no-unsafe-negation"],
+			"replacedBy": "no-unsafe-negation",
 			"url": "https://eslint.org/docs/latest/rules/no-negated-in-lhs"
 		},
 		{
 			"name": "no-new-object",
 			"value": "error",
 			"config": "style",
-			"replacedBy": ["no-object-constructor"],
+			"replacedBy": "no-object-constructor",
 			"url": "https://eslint.org/docs/latest/rules/no-new-object"
 		},
 		{
 			"name": "no-restricted-modules",
 			"value": "off",
 			"config": "node",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-restricted-modules"
 		},
 		{
 			"name": "no-return-await",
 			"value": "error",
 			"config": "best-practices",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/no-return-await"
 		},
 		{
 			"name": "no-spaced-func",
 			"value": "error",
 			"config": "style",
-			"replacedBy": ["func-call-spacing"],
+			"replacedBy": "func-call-spacing",
 			"url": "https://eslint.org/docs/latest/rules/no-spaced-func"
 		},
 		{
 			"name": "prefer-reflect",
 			"value": "off",
 			"config": "es6",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/prefer-reflect"
 		},
 		{
 			"name": "require-jsdoc",
 			"value": "off",
 			"config": "style",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/require-jsdoc"
 		},
 		{
 			"name": "valid-jsdoc",
 			"value": "off",
 			"config": "errors",
-			"replacedBy": [],
 			"url": "https://eslint.org/docs/latest/rules/valid-jsdoc"
 		}
 	]

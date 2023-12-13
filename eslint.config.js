@@ -6,7 +6,7 @@ console.log(`\u001b[33m${message}\u001b[0m`);
 
 export default defineBaseConfig(
 	{
-		ignores: ['**/tmp/*'],
+		ignores: ['**/dist/*', '**/tmp/*'],
 	},
 	{
 		name: 'custom:prettier',
