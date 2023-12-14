@@ -7,30 +7,37 @@ import { FlatCompat } from '@eslint/eslintrc';
 import airbnb from 'eslint-config-airbnb-base';
 
 import type {
-	ApprovedRule,
+	ApprovedRuleEntry,
 	BaseConfig,
 	BaseConfigEntry,
+	CustomNames,
 	DeprecatedRule,
 	NamedConfigEntry,
 	NamedFlatConfig,
+	RulesRecord,
 } from '../types.ts';
+
 import {
 	findRawRule,
 	handleApprovedRule,
 	handleDeprecatedRule,
 	sortRulesByEntryName,
 	sortRules,
+	getSortedRulesFromEntries,
+	isTypescriptRule,
+	getTypescriptRuleName,
 } from './rules.ts';
 
-import { pluginNames } from '../../src/setup/plugins.js';
+import { configNames, pluginNames } from './names.ts';
 
-function promiseBaseConfig(item: string) {
+function promiseBaseConfig(item: string): Promise<BaseConfigEntry> {
 	const name = path.basename(item, '.js');
 	const file = pathToFileURL(item).href;
 
 	return new Promise((resolve) => {
 		import(file).then((module) => {
-			resolve([name, module.default]);
+			const entry = [name, module.default] as BaseConfigEntry;
+			resolve(entry);
 		});
 	});
 }
@@ -45,17 +52,17 @@ export function processConfigEntries(
 ): [NamedConfigEntry[], DeprecatedRule[]] {
 	const [processedEntries, deprecatedRules] = processEntries(prefix, entries);
 
-	const legacyConfigName = 'disable-legacy';
-	processedEntries.push([
-		legacyConfigName,
-		createLegacyConfig(prefix, legacyConfigName, deprecatedRules),
-	]);
+	processedEntries.push(
+		createLegacyConfig(prefix, configNames.disableLegacy, deprecatedRules),
+	);
 
-	const stylisticConfigName = pluginNames.stylistic;
-	processedEntries.push([
-		stylisticConfigName,
-		createStylisticConfig(prefix, stylisticConfigName, deprecatedRules),
-	]);
+	processedEntries.push(
+		createStylisticConfig(prefix, configNames.stylistic, deprecatedRules)
+	);
+
+	processedEntries.push(
+		createTypescriptConfig(prefix, configNames.typescript, processedEntries)
+	);
 
 	return [processedEntries, deprecatedRules];
 }
@@ -68,7 +75,7 @@ function processEntries(
 	const deprecatedRules: DeprecatedRule[] = [];
 
 	entries.forEach(([configName, configBase]) => {
-		const processedRules: ApprovedRule[] = [];
+		const processedRules: ApprovedRuleEntry[] = [];
 
 		if (!configBase.rules) return;
 
@@ -98,7 +105,7 @@ function processEntries(
 
 		processedEntries.push([
 			configName,
-			convertConfig(`${prefix}:${configName}`, configBase, processedRules),
+			convertConfig(prefix, configName, configBase, processedRules),
 		]);
 	});
 
@@ -113,9 +120,10 @@ const compat = new FlatCompat({
 });
 
 function convertConfig(
+	prefix: string,
 	name: string,
 	base: BaseConfig,
-	approved: ApprovedRule[]
+	approved: ApprovedRuleEntry[]
 ): NamedFlatConfig {
 	const sorted = approved.sort(sortRulesByEntryName);
 	base.rules = Object.fromEntries(sorted);
@@ -124,18 +132,22 @@ function convertConfig(
 		delete base.plugins;
 	}
 
-	const named = { name };
+	const named = { name: getPrefixedName(prefix, name) };
 
 	return compat
 		.config(base)
 		.reduce((all, data) => Object.assign(all, data), named);
 }
 
+function getPrefixedName(prefix: string, name: string) {
+	return `${prefix}:${name}`;
+}
+
 function createLegacyConfig(
 	prefix: string,
-	name: string,
+	name: CustomNames,
 	deprecated: DeprecatedRule[]
-) {
+): NamedConfigEntry {
 	const rules = deprecated
 		.filter((rule) => rule.plugin !== pluginNames.stylistic)
 		.sort(sortRules)
@@ -149,17 +161,19 @@ function createLegacyConfig(
 			});
 		}, {});
 
-	return {
-		name: `${prefix}:${name}`,
+	const config = {
+		name: getPrefixedName(prefix, name),
 		rules,
 	};
+
+	return [name, config];
 }
 
 function createStylisticConfig(
 	prefix: string,
-	name: string,
+	name: CustomNames,
 	deprecated: DeprecatedRule[]
-) {
+): NamedConfigEntry {
 	const rules = deprecated
 		.filter((rule) => rule.plugin === name)
 		.sort(sortRules)
@@ -171,10 +185,35 @@ function createStylisticConfig(
 			{}
 		);
 
-	return {
-		name: `${prefix}:${name}`,
+	const config = {
+		name: getPrefixedName(prefix, name),
 		rules,
 	};
+
+	return [name, config];
 }
 
-// @TODO create typescript config !
+function createTypescriptConfig(
+	prefix: string,
+	name: CustomNames,
+	entries: NamedConfigEntry[]
+): NamedConfigEntry {
+	const allRules = getSortedRulesFromEntries(entries);
+	const rules: RulesRecord = {};
+
+	allRules.forEach(([ruleName, ruleValue]) => {
+		if (!isTypescriptRule(ruleName)) return;
+
+		console.log(`'${ruleName}' is replaced in @typescript-eslint`);
+
+		rules[ruleName] = 0;
+		rules[getTypescriptRuleName(ruleName)] = ruleValue;
+	});
+
+	const config = {
+		name: getPrefixedName(prefix, name),
+		rules
+	};
+
+	return [name, config];
+}

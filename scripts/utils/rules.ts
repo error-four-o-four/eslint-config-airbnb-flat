@@ -3,8 +3,10 @@ import { Linter } from 'eslint';
 import { pluginNames, plugins } from '../../src/setup/plugins.js';
 
 import type {
-	ApprovedRule,
+	ApprovedRuleEntry,
+	CustomNames,
 	DeprecatedRule,
+	NamedConfigEntry,
 	RawRule,
 	RuleEntry,
 	RuleMeta,
@@ -28,7 +30,7 @@ export function handleApprovedRule(
 	rawRule: RawRule,
 	ruleName: string,
 	ruleValue: RuleEntry,
-	rules: ApprovedRule[]
+	rules: ApprovedRuleEntry[]
 ) {
 	if (rawRule.meta && !rawRule.meta.deprecated) {
 		rules.push([ruleName, ruleValue]);
@@ -74,8 +76,8 @@ function findReplacedIn(ruleName: string) {
 			Boolean(result)
 				? result
 				: map[pluginName].includes(ruleName)
-				  ? pluginName
-				  : '',
+					? pluginName
+					: '',
 		''
 	);
 
@@ -88,7 +90,7 @@ export function handleDeprecatedRule(
 	ruleValue: RuleEntry,
 	ruleMeta: RuleMeta | undefined,
 	deprecatedRules: DeprecatedRule[],
-	processedRules: ApprovedRule[]
+	processedRules: ApprovedRuleEntry[]
 ) {
 	const strippedName = ruleName.includes('/')
 		? ruleName.split('/')[1]
@@ -113,7 +115,33 @@ export function handleDeprecatedRule(
 	}
 }
 
-export function sortRulesByEntryName(a: ApprovedRule, b: ApprovedRule) {
+export function isTypescriptRule(ruleName: string) {
+	const pluginRules = Object.keys(plugins[pluginNames.typescript].rules);
+	return pluginRules.includes(ruleName);
+}
+
+export function getTypescriptRuleName(ruleName: string) {
+	const scope: CustomNames = 'typescript';
+	return `${scope}/${ruleName}`;
+}
+
+export function getSortedRulesFromEntries(entries: NamedConfigEntry[]) {
+	const all: ApprovedRuleEntry[] = [];
+
+	entries.forEach(entry => {
+		const { rules } = entry[1];
+
+		if (!rules) {
+			throw Error(`Could not find any rules in plugin '${entry[0]}'`);
+		}
+
+		all.push(...Object.entries(rules));
+	});
+
+	return all.sort(sortRulesByEntryName);
+}
+
+export function sortRulesByEntryName(a: ApprovedRuleEntry, b: ApprovedRuleEntry) {
 	const nameA = a[0].toUpperCase();
 	const nameB = b[0].toUpperCase();
 

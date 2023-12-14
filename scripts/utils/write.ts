@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import type { BuiltInParserName, Options } from 'prettier';
 import prettier from 'prettier';
 
-import { DeprecatedRule, NamedFlatConfig } from '../types.ts';
+import { DeprecatedRule } from '../types.ts';
 import { sortRules } from './rules.ts';
 
 const prettierBaseOptions = await prettier.resolveConfig(
@@ -33,8 +33,8 @@ export function toCamelCase(input: string) {
 
 	const s = Array.isArray(m)
 		? m
-				.map((x) => x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase())
-				.join('')
+			.map((x) => x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase())
+			.join('')
 		: input;
 
 	return s.slice(0, 1).toLowerCase() + s.slice(1);

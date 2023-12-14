@@ -1,6 +1,9 @@
 import { fileURLToPath } from 'node:url';
 
 import { importBaseConfigs, processConfigEntries } from './utils/convert.ts';
+
+import { airbnbNames, configNames } from './utils/names.ts';
+
 import {
 	createLogFileData,
 	ensureFolder,
@@ -8,9 +11,7 @@ import {
 	writeFile,
 } from './utils/write.ts';
 
-import type { NamedConfigEntry, NamedFlatConfig } from './types.ts';
-
-import { pluginNames } from '../src/setup/plugins.js';
+import type { AirbnbNames, ConfigNames, NamedConfigEntry, NamedFlatConfig } from './types.ts';
 
 // EXECUTE
 
@@ -38,19 +39,12 @@ async function run() {
 	// errors
 	// ...
 	const configEntriesAirbnb = processedEntries.filter(
-		(entry) =>
-			entry[0] !== 'disable-legacy' && entry[0] !== pluginNames.stylistic
+		(entry) => Object.values(airbnbNames).includes(entry[0] as AirbnbNames)
 	);
 
-	const configEntryLegacy = processedEntries.find(
-		(entry) => entry[0] === 'disable-legacy'
-	);
-	if (!configEntryLegacy) throw new Error('Oops. Something went wrong');
-
-	const configEntryStylistic = processedEntries.find(
-		(entry) => entry[0] === pluginNames.stylistic
-	);
-	if (!configEntryStylistic) throw new Error('Oops. Something went wrong');
+	const configEntryLegacy = findConfig(processedEntries, configNames.disableLegacy);
+	const configEntryStylistic = findConfig(processedEntries, configNames.stylistic);
+	const configEntryTypescript = findConfig(processedEntries, configNames.typescript);
 
 	const baseDir = '../src/configs';
 	ensureFolder(fileURLToPath(new URL(`${baseDir}/`, import.meta.url)));
@@ -65,10 +59,23 @@ async function run() {
 	const legacyFile = `${baseDir}/legacy/index.js`;
 	await writeConfigToFile(legacyFile, configEntryLegacy[1]);
 
+	const typescriptFile = `${baseDir}/typescript/index.js`;
+	await writeConfigToFile(typescriptFile, configEntryTypescript[1]);
+
 	const logFile = `../legacy.json`;
 	const logData = createLogFileData(deprecatedRules);
 
 	writeFile(metaUrl, logFile, logData, 'json');
+}
+
+function findConfig(entries: NamedConfigEntry[], name: ConfigNames) {
+	const config = entries.find(
+		(entry) => entry[0] === name
+	);
+
+	if (!config) throw new Error(`Oops. Something went wrong. Could not find '${name}'`);
+
+	return config;
 }
 
 async function writeConfigs(folder: string, entries: NamedConfigEntry[]) {
@@ -107,7 +114,7 @@ async function writeConfigsEntryFile(
 	data += "/** @type {import('eslint').Linter.FlatConfig[]} */\n";
 	data += 'export default Object.values(all);';
 
-	// 	const data = `${NOTICE}
+	// const data = `${NOTICE}
 	// import bestPractice from './best-practices.js';
 	// import errors from './errors.js';
 	// import es6 from './es6.js';
